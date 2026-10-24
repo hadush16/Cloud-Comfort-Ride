@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy: #061f46;
+    --navy-dark: #041329;
+    --blue: #123e77;
+    --gold: #f3bf28;
+    --gold-dark: #bd8b09;
+    --gold-accent: #986800;
+    --gold-shadow: #c99308;
+    --cream: #f7f9fc;
+    --ink: #122747;
+    --muted: #65758b;
+    --line: #dce4ee;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: #fff;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Manrope', sans-serif;
+    color: var(--navy);
+    letter-spacing: -1.5px;
+  }
+
+  h1 em, h2 em {
+    font-style: normal;
+    color: var(--gold-accent);
+  }
+
+  :focus-visible {
+    outline: none;
+    ring: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+}
+
+/* Dream Transit Button styles */
+.dt-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--navy);
+  color: #fff;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 0 var(--gold-shadow);
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+}
+
+.dt-button:hover {
+  transform: translateY(-2px);
+  background: var(--blue);
+}
+
+.dt-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--gold-shadow);
+}
+
+.dt-button-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ffffff;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  box-shadow: none;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.dt-button-outline:hover {
+  transform: translateY(-2px);
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.dt-button-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--navy);
+  border: 2px solid var(--gold);
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+}
+
+.dt-button-gold:hover {
+  transform: translateY(-2px);
+  background: #e6b322;
+}
+
+/* Service Card Icons */
+.service-icon-blue { background: #eaf2ff; color: #2c65a2; }
+.service-icon-gold { background: #fff4d7; color: #a47a15; }
+.service-icon-lavender { background: #f1edff; color: #7662b3; }
+.service-icon-green { background: #e6f6ed; color: #287d54; }
+.service-icon-coral { background: #fff0e9; color: #b45d3b; }
+.service-icon-navy { background: #e8eef7; color: #1e456e; }
+
+/* Vehicle branding perspective wrapper */
+.vehicle-badge-overlay {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Fallback / shared dark navy hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #061f46 0%, #123e77 100%);
+  border-bottom: 2px solid #f3bf28;
+}
+
