@@ -55,9 +55,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="space-y-16 pb-16">
+    <div className="space-y-16 pb-16 dark:bg-[#040d1a] transition-colors">
       {/* Header Banner */}
-      <section className="bg-[#061f46] text-white py-14 sm:py-20 relative overflow-hidden border-b-2 border-[#f3bf28]">
+      <section className="bg-[#061f46] dark:bg-[#030d1a] text-white py-14 sm:py-20 relative overflow-hidden border-b-2 border-[#f3bf28]">
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-[#123e77]/40 blur-3xl pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#f3bf28]/20 text-[#f3bf28] border border-[#f3bf28]/40 text-xs font-bold uppercase tracking-wider mb-4">
@@ -66,7 +66,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
             We Want to Hear from You!
           </h1>
-          <p className="text-base sm:text-lg text-slate-200 mt-4 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-200 dark:text-slate-300 mt-4 leading-relaxed">
             Contact Cloud Comfort Ride (Cloud Medical Transportation) and let us be your trusted medical transit partner. Call us or send an inquiry for standing schedules or urgent transfers.
           </p>
         </div>
@@ -78,13 +78,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           {/* Left: Contact Info Cards */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-blue bg-blue-50 px-3 py-1 rounded-full">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#061f46] dark:text-[#f3bf28] bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 px-3 py-1 rounded-full inline-block">
                 Get In Touch
               </span>
-              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-brand-navy">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#061f46] dark:text-white">
                 Seattle Headquarters & Dispatch
               </h2>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 Whether you need assistance coordinating recurring dialysis trips, physical therapy rides, or hospital discharge, our friendly team is ready to assist.
               </p>
             </div>
@@ -92,72 +92,72 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             {/* Direct Channel Cards */}
             <div className="space-y-4">
               {/* Telephone */}
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-soft-sm flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center shrink-0">
+              <div className="p-5 rounded-2xl bg-white dark:bg-[#091b33] border border-slate-200 dark:border-slate-800 shadow-soft-sm flex items-start gap-4 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-[#0f2e59] text-blue-700 dark:text-[#f3bf28] flex items-center justify-center shrink-0">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
                     Phone Inquiries & Dispatch
                   </span>
                   <a
                     href={`tel:${COMPANY_INFO.phoneRaw}`}
-                    className="font-heading font-bold text-lg text-brand-navy hover:text-brand-blue transition-colors block"
+                    className="font-heading font-bold text-lg text-[#061f46] dark:text-white hover:text-blue-700 dark:hover:text-[#f3bf28] transition-colors block"
                   >
                     +1 (206) 327 - 4411
                   </a>
-                  <p className="text-xs text-slate-500">Available Monday through Sunday</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Available Monday through Sunday</p>
                 </div>
               </div>
 
               {/* Email */}
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-soft-sm flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
+              <div className="p-5 rounded-2xl bg-white dark:bg-[#091b33] border border-slate-200 dark:border-slate-800 shadow-soft-sm flex items-start gap-4 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-teal-50 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400 flex items-center justify-center shrink-0">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
                     Email Correspondence
                   </span>
                   <a
                     href={`mailto:${COMPANY_INFO.email}`}
-                    className="font-heading font-bold text-base text-brand-navy hover:text-brand-blue transition-colors block"
+                    className="font-heading font-bold text-base text-[#061f46] dark:text-white hover:text-blue-700 dark:hover:text-[#f3bf28] transition-colors block"
                   >
                     {COMPANY_INFO.email}
                   </a>
-                  <p className="text-xs text-slate-500">Responses typically within 2-4 hours</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Responses typically within 2-4 hours</p>
                 </div>
               </div>
 
               {/* Address */}
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-soft-sm flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+              <div className="p-5 rounded-2xl bg-white dark:bg-[#091b33] border border-slate-200 dark:border-slate-800 shadow-soft-sm flex items-start gap-4 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
                     Office Location
                   </span>
-                  <p className="font-heading font-bold text-sm text-slate-900">
+                  <p className="font-heading font-bold text-sm text-[#061f46] dark:text-white">
                     1902 E Yesler Way Unit #4, Seattle, WA 98122
                   </p>
-                  <p className="text-xs text-slate-500">Centrally located in Seattle's healthcare corridor</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Centrally located in Seattle's healthcare corridor</p>
                 </div>
               </div>
 
               {/* Operating Hours */}
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-[#06162a] border border-slate-200 dark:border-slate-800 flex items-start gap-4 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0">
                   <Clock className="w-6 h-6" />
                 </div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
                     Operating Schedule
                   </span>
-                  <p className="font-semibold text-xs sm:text-sm text-slate-800">
+                  <p className="font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200">
                     Monday – Sunday: 6:00 AM – 8:00 PM
                   </p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     Emergency dialysis and urgent hospital discharges accommodated on-call
                   </p>
                 </div>
@@ -165,7 +165,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             </div>
 
             {/* Seattle Service Area Card with Space Needle Skyline Photo */}
-            <div className="rounded-3xl overflow-hidden border-2 border-slate-200 bg-white shadow-soft-sm group">
+            <div className="rounded-3xl overflow-hidden border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-[#091b33] shadow-soft-sm group transition-colors">
               <div className="h-48 overflow-hidden bg-slate-900 relative">
                 <img
                   src="/images/wheelchair-seattle-skyline.jpg"
@@ -176,14 +176,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   Greater Seattle & King County
                 </span>
               </div>
-              <div className="p-4 bg-slate-50 text-xs text-slate-700 flex items-center justify-between font-medium">
+              <div className="p-4 bg-slate-50 dark:bg-[#06162a] text-xs text-slate-700 dark:text-slate-300 flex items-center justify-between font-medium">
                 <span>Serving Swedish, UW Medical & Harborview</span>
-                <span className="text-[#061f46] font-bold">Centrally Located</span>
+                <span className="text-[#061f46] dark:text-[#f3bf28] font-bold">Centrally Located</span>
               </div>
             </div>
 
             {/* Emergency Notice */}
-            <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-900 space-y-1">
+            <div className="p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900 text-xs text-rose-900 dark:text-rose-200 space-y-1">
               <span className="font-bold block">Medical Emergency Notice:</span>
               <p>
                 Cloud Comfort Ride provides scheduled Non-Emergency Medical Transportation (NEMT). If you are experiencing a life-threatening medical emergency, call 911 immediately.
@@ -193,24 +193,24 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
 
           {/* Right: Interactive Message Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-soft-lg p-6 sm:p-10 space-y-6">
+            <div className="bg-white dark:bg-[#091b33] rounded-3xl border border-slate-200/90 dark:border-slate-800 shadow-soft-lg p-6 sm:p-10 space-y-6 transition-colors">
               {submitted ? (
                 <div className="text-center py-10 space-y-4 animate-in fade-in duration-300">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-9 h-9" />
                   </div>
-                  <h3 className="font-heading font-extrabold text-2xl text-brand-navy">
+                  <h3 className="font-heading font-extrabold text-2xl text-[#061f46] dark:text-white">
                     Thanks for submitting!
                   </h3>
-                  <p className="text-sm text-slate-600 max-w-md mx-auto">
-                    Your message has been received by our Seattle dispatch team. We will get back to you promptly at <strong className="text-slate-900">{email}</strong>.
+                  <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto">
+                    Your message has been received by our Seattle dispatch team. We will get back to you promptly at <strong className="text-slate-900 dark:text-white">{email}</strong>.
                   </p>
                   <button
                     onClick={() => {
                       setSubmitted(false);
                       setMessage('');
                     }}
-                    className="px-6 py-2.5 rounded-xl text-xs font-bold text-brand-blue bg-blue-50 hover:bg-blue-100 transition-colors"
+                    className="px-6 py-2.5 rounded-xl text-xs font-bold text-[#061f46] dark:text-white bg-blue-50 dark:bg-blue-950/60 hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors min-h-[44px]"
                   >
                     Send Another Message
                   </button>
@@ -218,16 +218,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="space-y-1">
-                    <h3 className="font-heading font-extrabold text-2xl text-brand-navy">
+                    <h3 className="font-heading font-extrabold text-2xl text-[#061f46] dark:text-white">
                       Send Us a Message
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-500">
+                    <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
                       Have questions about coverage, recurring schedules, or private billing? Fill out this quick form.
                     </p>
                   </div>
 
                   {error && (
-                    <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
+                    <div className="p-4 rounded-xl bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-900 text-rose-700 dark:text-rose-300 text-xs flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 shrink-0" />
                       <span>{error}</span>
                     </div>
@@ -235,7 +235,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
                         Your Full Name <span className="text-rose-500">*</span>
                       </label>
                       <input
@@ -244,12 +244,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-sm bg-white dark:bg-[#06162a] text-[#0f172a] dark:text-white focus:ring-2 focus:ring-[#061f46] dark:focus:ring-[#f3bf28] min-h-[44px]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
                         Contact Phone
                       </label>
                       <input
@@ -257,13 +257,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="(206) 000-0000"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-sm bg-white dark:bg-[#06162a] text-[#0f172a] dark:text-white focus:ring-2 focus:ring-[#061f46] dark:focus:ring-[#f3bf28] min-h-[44px]"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
                       Email Address <span className="text-rose-500">*</span>
                     </label>
                     <input
@@ -272,18 +272,18 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="name@example.com"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-sm bg-white dark:bg-[#06162a] text-[#0f172a] dark:text-white focus:ring-2 focus:ring-[#061f46] dark:focus:ring-[#f3bf28] min-h-[44px]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
                       Inquiry Topic
                     </label>
                     <select
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-sm bg-white dark:bg-[#06162a] text-[#0f172a] dark:text-white focus:ring-2 focus:ring-[#061f46] dark:focus:ring-[#f3bf28] min-h-[44px]"
                     >
                       <option value="General Inquiry / Medical Transport">General Inquiry / Medical Transport</option>
                       <option value="Dialysis Recurring Transportation">Dialysis Recurring Transportation</option>
@@ -296,7 +296,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
                       Your Message <span className="text-rose-500">*</span>
                     </label>
                     <textarea
@@ -305,18 +305,18 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="How can Cloud Comfort Ride assist with your transportation needs?"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-blue"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-sm bg-white dark:bg-[#06162a] text-[#0f172a] dark:text-white focus:ring-2 focus:ring-[#061f46] dark:focus:ring-[#f3bf28]"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full dt-button shadow-dt-button flex items-center justify-center gap-2 !py-4 disabled:opacity-60"
+                    className="w-full dt-button shadow-dt-button flex items-center justify-center gap-2 !py-4 disabled:opacity-60 min-h-[48px]"
                   >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin text-[#f3bf28]" />
+                        <Loader2 className="w-4 h-4 animate-spin text-[#061f46]" />
                         <span>Sending message...</span>
                       </>
                     ) : (

@@ -17,6 +17,20 @@
     --line: #dce4ee;
   }
 
+  html.dark {
+    --navy: #092754;
+    --navy-dark: #030d1a;
+    --blue: #1d4ed8;
+    --gold: #f3bf28;
+    --gold-dark: #f59e0b;
+    --gold-accent: #fcd34d;
+    --gold-shadow: #855f00;
+    --cream: #0b192e;
+    --ink: #f1f5f9;
+    --muted: #94a3b8;
+    --line: #1e293b;
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
@@ -29,6 +43,12 @@
     color: var(--ink);
     background: #fff;
     line-height: 1.65;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html.dark body {
+    background: #040d1a;
+    color: #f1f5f9;
   }
 
   h1, h2, h3, h4 {
@@ -37,9 +57,17 @@
     letter-spacing: -1.5px;
   }
 
+  html.dark h1, html.dark h2, html.dark h3, html.dark h4 {
+    color: #ffffff;
+  }
+
   h1 em, h2 em {
     font-style: normal;
     color: var(--gold-accent);
+  }
+
+  html.dark h1 em, html.dark h2 em {
+    color: var(--gold);
   }
 
   :focus-visible {
@@ -102,6 +130,23 @@
   color: #ffffff;
 }
 
+/* Dark mode variations for buttons */
+html.dark .dt-button-outline {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+html.dark .dt-button-outline:hover {
+  background: #ffffff;
+  color: #061f46;
+  border-color: #ffffff;
+}
+
+html.dark .dt-button {
+  box-shadow: 0 4px 0 rgba(243, 191, 40, 0.4);
+}
+
 .dt-button-gold {
   display: inline-flex;
   align-items: center;
@@ -131,6 +176,18 @@
 .service-icon-green { background: #e6f6ed; color: #287d54; }
 .service-icon-coral { background: #fff0e9; color: #b45d3b; }
 .service-icon-navy { background: #e8eef7; color: #1e456e; }
+
+html.dark .service-icon-blue { background: rgba(44, 101, 162, 0.25); color: #93c5fd; }
+html.dark .service-icon-gold { background: rgba(164, 122, 21, 0.25); color: #fde047; }
+html.dark .service-icon-lavender { background: rgba(118, 98, 179, 0.25); color: #c4b5fd; }
+html.dark .service-icon-green { background: rgba(40, 125, 84, 0.25); color: #86efac; }
+html.dark .service-icon-coral { background: rgba(180, 93, 59, 0.25); color: #fdba74; }
+html.dark .service-icon-navy { background: rgba(30, 69, 110, 0.35); color: #bfdbfe; }
+
+/* Safe padding for fixed mobile bars */
+.pb-safe {
+  padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+}
 
 /* Vehicle branding perspective wrapper */
 .vehicle-badge-overlay {

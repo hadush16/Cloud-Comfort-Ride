@@ -112,11 +112,11 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-brand-blue selection:text-white">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#040d1a] text-slate-900 dark:text-slate-100 font-sans selection:bg-[#061f46] selection:text-[#f3bf28] transition-colors duration-200">
       {/* Accessibility Skip Link */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-brand-blue text-white font-bold rounded-lg shadow-lg"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#061f46] dark:bg-[#f3bf28] text-white dark:text-[#061f46] font-bold rounded-lg shadow-lg"
       >
         Skip to main content
       </a>
@@ -129,8 +129,8 @@ export function App() {
         onOpenBookingModal={() => navigateTo('/book-a-ride')}
       />
 
-      {/* Main Page Body */}
-      <main id="main-content" className="flex-grow focus:outline-none">
+      {/* Main Page Body (with bottom padding on mobile so floating bar never covers content) */}
+      <main id="main-content" className="flex-grow focus:outline-none pb-20 sm:pb-0">
         {renderPage()}
       </main>
 
@@ -138,17 +138,18 @@ export function App() {
       <Footer onNavigate={navigateTo} />
 
       {/* Mobile Floating Action Bar (Call & Quick Book) */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t-2 border-[#f3bf28] p-3 flex items-center justify-between gap-3 shadow-2xl no-print">
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#061830]/95 backdrop-blur-md border-t-2 border-[#f3bf28] p-3 pb-safe flex items-center justify-between gap-3 shadow-2xl no-print">
         <a
           href={`tel:${COMPANY_INFO.phoneRaw}`}
-          className="flex-1 py-3 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#061f46] font-bold text-xs flex items-center justify-center gap-1.5 border border-slate-300 transition-colors"
+          className="flex-1 min-h-[44px] py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/90 dark:hover:bg-slate-700 text-[#061f46] dark:text-slate-100 font-bold text-xs flex items-center justify-center gap-1.5 border border-slate-300 dark:border-slate-700 transition-colors"
+          aria-label="Call Dispatch directly"
         >
-          <Phone className="w-3.5 h-3.5 text-[#061f46]" />
+          <Phone className="w-3.5 h-3.5 text-[#061f46] dark:text-[#f3bf28]" />
           <span>Call Dispatch</span>
         </a>
         <button
           onClick={() => navigateTo('/book-a-ride')}
-          className="flex-1 py-3 px-3 rounded-xl bg-[#f4c832] hover:bg-[#eab720] text-[#061f46] font-heading font-black text-xs flex items-center justify-center gap-1.5 shadow-sm border border-[#f4c832] transition-colors"
+          className="flex-1 min-h-[44px] py-2.5 px-3 rounded-xl bg-[#f4c832] hover:bg-[#eab720] text-[#061f46] font-heading font-black text-xs flex items-center justify-center gap-1.5 shadow-sm border border-[#f4c832] transition-colors"
         >
           <Calendar className="w-3.5 h-3.5 text-[#061f46]" />
           <span>Book a Ride</span>
